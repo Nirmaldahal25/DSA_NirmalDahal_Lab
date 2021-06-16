@@ -3,16 +3,24 @@
 int main()
 {
     StackArray<int, 10> stack;
-    for(int i=0 ; i<10;i++)
+    for(int i=0 ; i<11;i++)
     {
         stack.push(i+1000);
     }
 
     std::cout<<stack.top()<<"    Top\n";
     std::cout<<"printing Stack\n";
-    while(!stack.isEmpty())
+    try
     {
-        std::cout<<stack.pop()<<'\n';
+        for(int i=0;i<15;i++)
+        {
+            std::cout<<"index= "<<i<<" data=  "<<stack.pop()<<'\n';
+        }
+        std::cout<<std::endl;
+    }
+    catch (const char* msg)
+    {
+            std::cout<<"Error: "<<msg<<std::endl;
     }
     std::cout<<std::endl;
 }

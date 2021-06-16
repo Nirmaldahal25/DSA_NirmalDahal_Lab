@@ -2,7 +2,7 @@ template <class T, int sizeT>
 class StackArray
 {
     public:
-        StackArray():index(-1)
+        StackArray():m_index(-1)
         {
         }
 
@@ -10,7 +10,7 @@ class StackArray
         {
             if(!isFull())
             {
-                m_arr[++index] = _val;
+                m_arr[++m_index] = _val;
             }
         }
 
@@ -18,29 +18,29 @@ class StackArray
         {
             if(!isEmpty())
             {
-                return m_arr[index--];
+                return m_arr[m_index--];
             }
             throw "array is empty";
         }
 
         T top()
         {
-            return m_arr[index];
+            return m_arr[m_index];
         }
 
         bool isFull() const
         {
-            return index+1 == sizeT;
+            return m_index+1 == sizeT;
         }
 
         bool isEmpty() const
         {
-            return index < 0;
+            return m_index < 0;
         }
 
 
     private:
         T m_arr[sizeT];
-        int index;
+        int m_index;
 };
 
