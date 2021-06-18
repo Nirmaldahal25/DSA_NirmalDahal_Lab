@@ -3,6 +3,7 @@
 int main()
 {
     StackArray<int, 10> stack;
+    std::cout<<"Push into stack: values(1000-1009)\n";
     for(int i=0 ; i<11;i++)
     {
         stack.push(i+1000);

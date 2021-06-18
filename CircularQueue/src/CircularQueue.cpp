@@ -2,17 +2,26 @@
 
 int main(){
     CircularQueue<int,4> Qu;
-    Qu.enqueue(123);
-    Qu.enqueue(22);
-    Qu.enqueue(12123);
-    Qu.enqueue(124);
+    std::cout<<"Enqueue values(100-103)\n";
+    for(int i=0; i<7; i++)
+    {
+        Qu.enqueue(i+100);
+    }
     std::cout<<Qu.front()<<"  Front\n";
-    std::cout<<Qu.dequeue()<<std::endl;
+    std::cout<<Qu.dequeue()<<"   Removing an item\n";
     std::cout<<Qu.front()<<"  Front\n";
     std::cout<<Qu.back()<<"   Back\n";
-    while(!Qu.isEmpty())
+
+    std::cout<<"Removing Data from queue\n";
+    try{
+        for(int i=0; i<10; i++)
+        {
+            std::cout<<"data-> "<<Qu.dequeue()<<'\n';
+        }
+    }
+    catch(const char *msg)
     {
-    	std::cout<<Qu.dequeue()<<'\n';
+        std::cout<<"Error: "<<msg<<'\n';
     }
     std::cout<<std::endl;
     return 0;
